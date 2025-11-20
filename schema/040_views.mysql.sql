@@ -1,4 +1,20 @@
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
+-- engine: mysql
+-- table:  rbac_repositories
+-- Contract view for [rbac_repositories]
+CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_rbac_repositories AS
+SELECT
+  id,
+  name,
+  url,
+  status,
+  signing_key_id,
+  last_synced_at,
+  last_commit,
+  created_at
+FROM rbac_repositories;
+
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  rbac_repositories_sync_status
 -- RBAC repository sync cursors (per peer)
@@ -15,20 +31,4 @@ SELECT
 FROM rbac_repositories r
 LEFT JOIN rbac_sync_cursors c ON c.repo_id = r.id
 ORDER BY r.id, c.peer;
-
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
--- engine: mysql
--- table:  rbac_repositories
--- Contract view for [rbac_repositories]
-CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_rbac_repositories AS
-SELECT
-  id,
-  name,
-  url,
-  status,
-  signing_key_id,
-  last_synced_at,
-  last_commit,
-  created_at
-FROM rbac_repositories;
 

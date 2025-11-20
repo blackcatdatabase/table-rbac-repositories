@@ -1,4 +1,20 @@
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
+-- engine: postgres
+-- table:  rbac_repositories
+-- Contract view for [rbac_repositories]
+CREATE OR REPLACE VIEW vw_rbac_repositories AS
+SELECT
+  id,
+  name,
+  url,
+  status,
+  signing_key_id,
+  last_synced_at,
+  last_commit,
+  created_at
+FROM rbac_repositories;
+
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  rbac_repositories_sync_status
 -- RBAC repository sync cursors (per peer)
@@ -15,20 +31,4 @@ SELECT
 FROM rbac_repositories r
 LEFT JOIN rbac_sync_cursors c ON c.repo_id = r.id
 ORDER BY r.id, c.peer;
-
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
--- engine: postgres
--- table:  rbac_repositories
--- Contract view for [rbac_repositories]
-CREATE OR REPLACE VIEW vw_rbac_repositories AS
-SELECT
-  id,
-  name,
-  url,
-  status,
-  signing_key_id,
-  last_synced_at,
-  last_commit,
-  created_at
-FROM rbac_repositories;
 
