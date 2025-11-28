@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class RbacRepositoryDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'signing_key_id' => 'signingKeyId', 'last_synced_at' => 'lastSyncedAt', 'last_commit' => 'lastCommit', 'created_at' => 'createdAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'name' => 'name', 'url' => 'url', 'signing_key_id' => 'signingKeyId', 'status' => 'status', 'last_synced_at' => 'lastSyncedAt', 'last_commit' => 'lastCommit', 'created_at' => 'createdAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];

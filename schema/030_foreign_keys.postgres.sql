@@ -1,4 +1,5 @@
--- Auto-generated from schema-map-postgres.psd1 (map@62c9c93)
+-- Auto-generated from schema-map-postgres.psd1 (map@mtime:2025-11-21T00:25:46Z)
 -- engine: postgres
 -- table:  rbac_repositories
+
 ALTER TABLE rbac_repositories ADD CONSTRAINT fk_rbac_repos_sign_key FOREIGN KEY (signing_key_id) REFERENCES signing_keys(id) ON DELETE SET NULL;

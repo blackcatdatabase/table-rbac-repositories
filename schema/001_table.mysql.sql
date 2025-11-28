@@ -1,6 +1,7 @@
--- Auto-generated from schema-map-mysql.psd1 (map@62c9c93)
+-- Auto-generated from schema-map-mysql.psd1 (map@mtime:2025-11-27T15:13:14Z)
 -- engine: mysql
 -- table:  rbac_repositories
+
 CREATE TABLE IF NOT EXISTS rbac_repositories (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(120) NOT NULL,
