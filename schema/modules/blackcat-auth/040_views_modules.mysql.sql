@@ -1,6 +1,7 @@
--- Auto-generated from feature-modules-mysql.psd1 (map@mtime:2025-11-26T18:45:53Z)
+-- Auto-generated from feature-modules-mysql.yaml (map@94ebe6c)
 -- engine: mysql
 -- table:  rbac_sync_cursors_status
+
 CREATE OR REPLACE ALGORITHM=TEMPTABLE SQL SECURITY INVOKER VIEW vw_rbac_sync_cursors_status AS
 SELECT
   r.id AS repo_id,
