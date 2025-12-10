@@ -5,13 +5,13 @@ Sources of RBAC definitions (git repos, APIs, etc.).
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | last_commit | VARCHAR(128) | YES |  | Hash/identifier of the last synced commit. |
-| last_synced_at | DATETIME(6) | YES |  | Last successful sync time. |
+| last_synced_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last successful sync time. |
 | name | VARCHAR(120) | NO |  | Repository identifier. |
 | signing_key_id | BIGINT | YES |  | Signing key used to verify snapshots (FK signing_keys.id). |
-| status | ENUM('active','disabled') | NO | active | Repository status. (enum: active, disabled) |
+| status | mysql: ENUM('active','disabled') / postgres: TEXT | NO | active | Repository status. (enum: active, disabled) |
 | url | VARCHAR(1024) | YES |  | Optional URL/endpoint. |
 
 ## Engine Details
