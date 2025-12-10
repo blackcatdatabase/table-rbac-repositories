@@ -7,12 +7,12 @@ Sources of RBAC definitions (git repos, APIs, etc.).
 | --- | --- | --- | --- | --- |
 | created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| last_commit | VARCHAR(128) | YES |  | Hash/identifier of the last synced commit. |
-| last_synced_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last successful sync time. |
 | name | VARCHAR(120) | NO |  | Repository identifier. |
-| signing_key_id | BIGINT | YES |  | Signing key used to verify snapshots (FK signing_keys.id). |
-| status | mysql: ENUM('active','disabled') / postgres: TEXT | NO | active | Repository status. (enum: active, disabled) |
 | url | VARCHAR(1024) | YES |  | Optional URL/endpoint. |
+| status | mysql: ENUM('active','disabled') / postgres: TEXT | NO | active | Repository status. (enum: active, disabled) |
+| last_commit | VARCHAR(128) | YES |  | Hash/identifier of the last synced commit. |
+| signing_key_id | BIGINT | YES |  | Signing key used to verify snapshots (FK signing_keys.id). |
+| last_synced_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last successful sync time. |
 
 ## Engine Details
 
