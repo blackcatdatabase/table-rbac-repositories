@@ -5,14 +5,14 @@ Sources of RBAC definitions (git repos, APIs, etc.).
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| last_commit | VARCHAR(128) | YES |  | Hash/identifier of the last synced commit. |
-| last_synced_at | DATETIME(6) | YES |  | Last successful sync time. |
 | name | VARCHAR(120) | NO |  | Repository identifier. |
-| signing_key_id | BIGINT | YES |  | Signing key used to verify snapshots (FK signing_keys.id). |
-| status | ENUM('active','disabled') | NO | active | Repository status. (enum: active, disabled) |
 | url | VARCHAR(1024) | YES |  | Optional URL/endpoint. |
+| signing_key_id | BIGINT | YES |  | Signing key used to verify snapshots (FK signing_keys.id). |
+| status | mysql: ENUM('active','disabled') / postgres: TEXT | NO | active | Repository status. (enum: active, disabled) |
+| last_synced_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last successful sync time. |
+| last_commit | VARCHAR(128) | YES |  | Hash/identifier of the last synced commit. |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 
 ## Engine Details
 
@@ -57,5 +57,5 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_rbac_repositories | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
-| vw_rbac_repositories | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_rbac_repositories | mysql | algorithm=MERGE, security=INVOKER | [../schema/040_views.mysql.sql](../schema/040_views.mysql.sql) |
+| vw_rbac_repositories | postgres |  | [../schema/040_views.postgres.sql](../schema/040_views.postgres.sql) |
