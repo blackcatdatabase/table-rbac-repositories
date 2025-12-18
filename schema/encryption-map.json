@@ -1,0 +1,32 @@
+{
+  "tables": {
+    "rbac_repositories": {
+      "columns": {
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "last_commit": {
+          "strategy": "passthrough"
+        },
+        "last_synced_at": {
+          "strategy": "passthrough"
+        },
+        "name": {
+          "strategy": "passthrough"
+        },
+        "signing_key_id": {
+          "strategy": "passthrough"
+        },
+        "status": {
+          "strategy": "passthrough"
+        },
+        "url": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
