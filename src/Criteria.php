@@ -41,11 +41,11 @@ final class Criteria extends BaseCriteria
         return [ 'name', 'url', 'last_commit' ];
     }
 
-/** Columns allowed in ORDER BY (falls back to filterable() when empty). */
-protected function sortable(): array
-{
-    return [ 'id', 'name', 'url', 'signing_key_id', 'status', 'last_synced_at', 'last_commit', 'created_at' ];
-}
+    /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
+    protected function sortable(): array
+    {
+        return [ 'id', 'name', 'url', 'signing_key_id', 'status', 'last_synced_at', 'last_commit', 'created_at' ];
+    }
 
     /**
      * Whitelist of joinable entities (for safe ->join() usage):
